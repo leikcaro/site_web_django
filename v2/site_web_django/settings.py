@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "bootstrap5",
     "boards"
 ]
 
@@ -122,3 +123,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = 'boards.CustomUser'
+
+LOGIN_REDIRECT_URL = 'home'  # Nombre de la URL a la que redirige después del login
+LOGOUT_REDIRECT_URL = 'login'  # Nombre de la URL después del logout

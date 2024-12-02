@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ board.titulo }}</h1>
+<p>{{ board.descripcion }}</p>
+<p>Última modificación: {{ board.modificado }}</p>
+<a href="{% url 'boards_update' board.pk %}">Editar</a>
+<a href="{% url 'boards_delete' board.pk %}">Eliminar</a>
+<a href="{% url 'boards_list' %}">Volver al listado</a>
+{% endblock %}

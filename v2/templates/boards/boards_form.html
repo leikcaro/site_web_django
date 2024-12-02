@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% if object %}Editar Board{% else %}Crear Board{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
+</form>
+<a href="{% url 'boards_list' %}">Cancelar</a>
+
+</ul>
+{% endblock  %}

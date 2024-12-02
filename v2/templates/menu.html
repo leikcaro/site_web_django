@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- Logo o nombre del sitio -->
+    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
+    <!-- Botón para dispositivos móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Contenido colapsable -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Enlaces de navegación alineados a la izquierda -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Enlaces existentes -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <!-- Enlace a Boards List (visible solo para usuarios autenticados) -->
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'boards_list' %}">Boards List</a>
+          </li>
+        {% endif %}
+      </ul>
+      <!-- Formulario de búsqueda y opciones de autenticación alineados a la derecha -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <!-- Opciones de autenticación -->
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hola, {{ user.username }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Registrarse</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

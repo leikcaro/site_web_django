@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+<br>
+{% block content %}
+
+    <form method="POST" class="ms-4 mt-4">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class = "btn btn-primary ms-3" value="Enviar">
+    </form>
+
+{% endblock  %}

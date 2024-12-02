@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Eliminar Board</h1>
+<p>¿Estás seguro de que deseas eliminar el board "{{ object.titulo }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'boards_list' %}">Cancelar</a>
+
+{% endblock  %}

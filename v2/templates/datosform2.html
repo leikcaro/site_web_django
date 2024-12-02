@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% comment %} <form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Enviar">
+</form> {% endcomment %}
+
+{% comment %} <form method="POST">
+{{form.as_p}}
+<input type="submit" value="Enviar">
+</form> {% endcomment %}
+
+
+{% block  content %}
+    <div style="margin:auto;
+            max-width:300 px;
+            padding-top: 20%;
+            text-align: center;">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Nombres</label>
+                {{form.nombres}}
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                {{form.apellidos}}
+            </div>
+            <div class="form-group">
+                <label>Prioridad</label>
+                {{form.prioridad}}
+            </div> 
+            <div class="form-group">
+                <label>Constraseña</label>
+                {{form.contrasenna}}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Enviar</button>    
+        </div>
+        </form>
+
+    </div>
+
+{% endblock  %}

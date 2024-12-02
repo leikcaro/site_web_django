@@ -1,0 +1,21 @@
+{% comment %} Este form es el mas sencillo con get pero con csrf_token {% endcomment %}
+
+{% comment %} <form method="GET">
+    {% csrf_token %}
+    <label for="tu_nombre">Nombre:</label>
+    <input id="tu_nombre" type="text" name="tu_nombre" placeholder="Ingresa algo">
+    <button type="submit">Enviar</button>
+</form> {% endcomment %}
+
+{% comment %} <form method="POST">
+    {% csrf_token %}
+    <label for="tu_nombre">Nombre:</label>
+    <input id="tu_nombre" type="text" name="tu_nombre" placeholder="Ingresa algo">
+    <button type="submit">Enviar</button>
+</form> {% endcomment %}
+
+{% comment %} <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form> {% endcomment %}

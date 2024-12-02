@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Listado de Boards</h1>
+<a href="{% url 'boards_create' %}">Crear nuevo Board</a>
+<ul>
+    {% for board in boards %}
+        <li>
+            <a href="{% url 'board_detail' board.pk %}">{{ board.titulo }}</a> - Última modificación: {{ board.modificado }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock  %}
